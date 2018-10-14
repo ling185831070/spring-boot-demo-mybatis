@@ -1,0 +1,43 @@
+#默认使用配置
+spring:
+  profiles:
+    active: dev
+
+#公共配置与profiles选择无关 mapperLocations指的路径是src/main/resources
+mybatis:
+  typeAliasesPackage: org.ling.springboot.tk.mybatis.domain
+  mapperLocations: classpath:mapper/*.xml
+
+---
+#开发配置
+spring:
+  profiles: dev
+
+  datasource:
+          url: jdbc:mysql://localhost:3306/glcs
+          username: root
+          password: 123
+          #type: com.alibaba.druid.pool.DruidDataSource
+          initial-size: 1 #初始化连接大小
+          min-idle: 5 #最小空闲连接数
+          max-active: 10 #最大连接数
+          query-timeout: 6000 #查询超时时间
+          transaction-query-timeout: 6000 #事务查询超时时间
+          remove-abandoned-timeout: 1800 #关闭空闲连接超时时间
+          filter-class-names: stat
+          filters: stat,config
+
+  mapper:
+          mappers: tk.mybatis.mapper.common.Mapper
+          notEmpty: false
+          identity: MYSQL
+
+#配置分页插件pagehelper
+  pagehelper:
+          helperDialect: mysql
+          reasonable: true
+          supportMethodsArguments: true
+          params: count=countSql
+
+logging:
+  config: classpath:log4j2.yml
