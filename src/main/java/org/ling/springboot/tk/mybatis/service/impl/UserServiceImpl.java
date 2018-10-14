@@ -27,6 +27,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public PageInfo<User> queryPage(Page page) {
         PageHelper.startPage(page.getPageNum(),page.getPageSize());
-        return new PageInfo<>(userMapper.queryPage());
+        return new PageInfo<>(userMapper.selectAll());
     }
 }

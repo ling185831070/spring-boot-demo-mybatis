@@ -15,10 +15,4 @@
         <result property="updatedUser" column="UPDATED_USER" />
         <result property="updatedDate" column="UPDATED_DATE" />
     </resultMap>
-
-    <select id="queryPage"  resultMap="User">
-		SELECT * FROM t_user
-	</select>
-	
-
 </mapper>
