@@ -21,37 +21,37 @@ public class User implements Serializable {
     /**
      * 用户名称
      */
-     private String userName;
+    private String userName;
     /**
      * 邮箱
      */
-     private String email;
+    private String email;
     /**
      * 手机号码
      */
-     private String mobile;
+    private String mobile;
     /**
      * 状态
      */
-     private String status;
+    private String status;
     /**
      * 有效标志:Y 有效；N 无效
      */
-     private String validFlag;
+    private String validFlag;
     /**
      * 创建人
      */
-     private String createdUser;
+    private String createdUser;
     /**
      * 创建时间
      */
-     private Date createdDate;
+    private Date createdDate;
     /**
      * 修改人
      */
-     private String updatedUser;
+    private String updatedUser;
     /**
      * 修改时间
      */
-     private Date updatedDate;
+    private Date updatedDate;
 }   

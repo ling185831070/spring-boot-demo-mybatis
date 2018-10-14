@@ -8,12 +8,12 @@ import org.ling.springboot.tk.mybatis.mapper.UserMapper;
 import org.ling.springboot.tk.mybatis.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
     UserMapper userMapper;
+
     @Override
     public User getUserById(String id) {
         return userMapper.selectByPrimaryKey(id);
@@ -21,12 +21,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void insertOne(User anqx001) throws RuntimeException {
-       userMapper.insert(anqx001);
+        userMapper.insert(anqx001);
     }
 
     @Override
     public PageInfo<User> queryPage(Page page) {
-        PageHelper.startPage(page.getPageNum(),page.getPageSize());
+        PageHelper.startPage(page.getPageNum(), page.getPageSize());
         return new PageInfo<>(userMapper.selectAll());
     }
 }
